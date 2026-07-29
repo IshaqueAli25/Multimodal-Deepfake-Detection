@@ -22,6 +22,8 @@ venv/
 
 .dataset/
 dataset/
+data/
+*.zip
 # Jupyter
 
 .ipynb_checkpoints/

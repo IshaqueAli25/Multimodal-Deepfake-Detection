@@ -2,13 +2,13 @@ init_rand_seed: 42
 dataset_name: lavdf_mbavloc
 devices: ['cuda:0',]
 output_folder: ./ckpt/mbavloc/
-train_split: 'training'
-val_split: 'validation'
+train_split: 'train'
+val_split: 'dev'
 model_name: "MBAVLocTransformer"
 
 # paths
-cache_dir: ./.cached_features/
-anno_file: /scratch/Deepfake/datasets/LAV-DF/metadata.json
+cache_dir: /scratch/zm21856/cached_features/
+anno_file: /scratch/zm21856/LAV-DF/LAV-DF/metadata.min.json
 
 loader: {
     batch_size: 16,

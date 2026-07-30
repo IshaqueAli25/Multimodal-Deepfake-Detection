@@ -83,11 +83,11 @@ class LAVDFCachedDataset(Dataset):
 
             # parse fake periods -> segments in seconds
             fake_periods = entry.get('fake_periods', [])
-            modify_type = entry.get('modify_type', 'real')
+            is_fake = entry.get('modify_video', False) or entry.get('modify_audio', False)
 
             segments = []
             labels = []
-            if modify_type != 'real' and len(fake_periods) > 0:
+            if is_fake and len(fake_periods) > 0:
                 for period in fake_periods:
                     if len(period) >= 2:
                         segments.append([float(period[0]), float(period[1])])
